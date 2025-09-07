@@ -2,7 +2,8 @@
 import pandas as pd
 import numpy as np
 from shiny import App, Inputs, ui, reactive, render, module
-#from shinywidgets import render_plotly, output_widget
+from shinywidgets import render_plotly, output_widget
+from shinyswatch import theme
 
 #import modules
 from modules.user_stats import user_stats_ui, user_stats_server
@@ -27,8 +28,13 @@ app_ui = ui.page_navbar(
         user_stats_ui(
             data=data
         ))
-
     ############ PAGE PLACEHOLDER #########
+
+    ############ TITLE & THEME ############
+    window_title='Root Digital League Dashboard',
+    id='tab',
+    theme=theme.superhero(),
+
 )
 
 ############################################################
