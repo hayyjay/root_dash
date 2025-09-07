@@ -44,4 +44,14 @@ app_ui = ui.page_navbar(
 def server(input, output, session):
     
     ############ USER STATS ###############
-    user_stats_server
+    user_stats_server(
+        'user_stats',
+        data=data
+    )
+
+    ############ PAGE PLACEHOLDER #########
+
+app = App(app_ui, server)
+
+if __name__ == "__main__":
+    app.run()
